@@ -23,6 +23,8 @@ const carList = [
   {assignedBrandName:"Maruti", assignedCarColor:"Green"},
 ];
 
+const numberList = [1,2,3,4,5,6]
+
 const isDoorOpened = false;
 const showCarInfo = carInfo.assignedBrandName !== undefined && carInfo.assignedCarColor !== undefined;
 return (
@@ -35,7 +37,10 @@ return (
       {isDoorOpened?<h2>Garage door is open</h2> : <h2>Garage door is closed</h2>}
 
       <ul>
-        {carList.map((carInfo) => <li><CarExample assignedCarInfo={carInfo}/></li>) }
+        {carList.map((carInfo) => <li key={carInfo.assignedBrandName}><CarExample assignedCarInfo={carInfo}/></li>) }
+      </ul>
+      <ul>
+        {numberList.map((eachVal, eachValIndex)=> <p key={eachValIndex}>{eachVal}</p>)}
       </ul>
     </div>      
   );
